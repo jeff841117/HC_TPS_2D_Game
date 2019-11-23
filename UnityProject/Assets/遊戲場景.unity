@@ -167,8 +167,9 @@ GameObject:
   - component: {fileID: 123715361}
   - component: {fileID: 123715360}
   - component: {fileID: 123715362}
+  - component: {fileID: 123715363}
   m_Layer: 0
-  m_Name: "08_\u9EC3\u8272\u5C0F\u9D281"
+  m_Name: kid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -268,8 +269,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e761dd63705334aad69f260e1ae6c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jump: 1.5
+  jump: 100
+  angle: 10
   dead: 0
+  r2d: {fileID: 123715361}
+  gm: {fileID: 0}
+  goScore: {fileID: 305964981}
+  goGM: {fileID: 1009270506}
+  aud: {fileID: 123715363}
+  soundJump: {fileID: 8300000, guid: 77569acd21b03d94ba80202f09d0607a, type: 3}
+  soundHit: {fileID: 8300000, guid: 9884e023db5992b469cafdae2746dc06, type: 3}
+  soundPoint: {fileID: 0}
 --- !u!50 &123715361
 Rigidbody2D:
   serializedVersion: 4
@@ -307,6 +317,102 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.16
+--- !u!82 &123715363
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123715356}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &206060209
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,7 +760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &305964982
 RectTransform:
   m_ObjectHideFlags: 0
@@ -897,7 +1003,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1009270507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -913,6 +1019,8 @@ MonoBehaviour:
   tappoint: 0
   nowpoint: 0
   pipe: {fileID: 6878964989030040425, guid: a94a9153b297bad41b568423da0aefe2, type: 3}
+  goFinal: {fileID: 47629205}
+  textPoint: {fileID: 305964984}
 --- !u!4 &1009270508
 Transform:
   m_ObjectHideFlags: 0
@@ -1006,7 +1114,7 @@ GameObject:
   - component: {fileID: 1349198018}
   - component: {fileID: 1349198017}
   m_Layer: 0
-  m_Name: "06_\u5730\u677F"
+  m_Name: "\u5730\u677F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1209,7 +1317,7 @@ GameObject:
   - component: {fileID: 1507910905}
   - component: {fileID: 1507910904}
   m_Layer: 0
-  m_Name: "05_\u80CC\u666F"
+  m_Name: "\u80CC\u666F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

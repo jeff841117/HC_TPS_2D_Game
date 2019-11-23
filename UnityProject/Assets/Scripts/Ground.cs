@@ -34,6 +34,8 @@ public class Ground : MonoBehaviour
     /// </summary>
     private void Move()
     {
+        // 如果 GM.遊戲結束 為 勾選 就 跳出
+        if (GameManager.ganeOver) return;
         //地板.位移(x,y,z)
         //time,deltatime 每幀的時間
         ground.Translate(-speed * Time.deltaTime, 0, 0);
