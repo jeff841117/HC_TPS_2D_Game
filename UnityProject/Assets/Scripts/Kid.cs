@@ -45,7 +45,7 @@ public class Kid : MonoBehaviour
         {
             // 小雞 往上跳
             print("玩家按下左鍵");
-            aud.PlayOneShot(soundJump, 1.5f);    // 喇叭.播放一次音效(音效,音量);
+            aud.PlayOneShot(soundJump, 1f);    // 喇叭.播放一次音效(音效,音量);
             r2d.Sleep();                         // 小雞剛體.重置();
             r2d.gravityScale = 1;                // 小雞剛體.重力 = 1;
             r2d.AddForce(new Vector2(0, jump));  // 小雞剛體.增加推力(二維向量(左右，上下));
@@ -101,10 +101,11 @@ public class Kid : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D hit)
     {
-        if(hit.name == "加分")
+        // 如果碰到加分區域 並且 死亡 bool值  false
+        if(hit.name == "加分" && !dead)
         {
             gm.GetPoint();
-            aud.PlayOneShot(soundPoint, 1.5f);    // 喇叭.播放一次音效(音效,音量);
+            aud.PlayOneShot(soundPoint, 1f);    // 喇叭.播放一次音效(音效,音量);
         }
     }
 }
